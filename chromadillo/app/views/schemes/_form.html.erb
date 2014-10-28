@@ -1,0 +1,79 @@
+<%= form_for(@scheme) do |f| %>
+  <% if @scheme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scheme.errors.count, "error") %> prohibited this scheme from being saved:</h2>
+
+      <ul>
+      <% @scheme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!--
+<!--   <div class="field">
+    <%= f.label :font1 %><br>
+    <%= f.text_field :font1 %>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :font2 %><br>
+    <%= f.text_field :font2 %>
+  </div>
+  <div class="field">
+    <%= f.label :color1 %><br>
+    <%= f.text_field :color1 %>
+  </div>
+  <div class="field">
+    <%= f.label :color2 %><br>
+    <%= f.text_field :color2 %>
+  </div>
+  <div class="field">
+    <%= f.label :color3 %><br>
+    <%= f.text_field :color3 %>
+  </div>
+  <div class="field">
+    <%= f.label :color4 %><br>
+    <%= f.text_field :color4 %>
+  </div>
+  <div class="field">
+    <%= f.label :color5 %><br>
+    <%= f.text_field :color5 %>
+  </div>
+  <div class="actions"> -->
+<!--     <%= f.submit %>
+  </div>
+<% end %> -->
+
+<!--         <h3> Generate By Mood </h3>
+        <select name="mydropdownmood">
+          <option value="Professional">Professional</option>
+          <option value="Personal">Personal</option>
+          <option value="Masculine">Masculine</option>
+          <option value="Feminine">Feminine</option>
+          <option value="Playful">Playful</option>
+        </select> -->
+    <h3> Generate By Project Type </h3>
+    <select name="mydropdownindustry">
+      <option value="Academia">Academia</option>
+        <option value="Architecture">Architechture</option>
+        <option value="Arts + Culture">Arts + Culture</option>
+        <option value="Educational">Educational</option>
+        <option value="Government">Government</option>
+        <option value="Finance">Finance</option>
+        <option value="History">History</option>
+        <option value="Legal">Legal</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Promotional">Promotional</option>
+        <option value="Science">Science</option>
+        <option value="Technology">Technology</option>
+        <option value="Transportation">Transportation</option>
+    </select>
+          <h3> Scheme Type </h3>
+        <select name="mydropdownschemetype">
+          <option value="Monochromatic">Monochromatic</option>
+          <option value="Analogous">Analogous</option>
+          <option value="Complementary">Complementary</option>
+          <option value="Random!">Random!</option>
+        </select>
+
