@@ -53,6 +53,14 @@
           <option value="Feminine">Feminine</option>
           <option value="Playful">Playful</option>
         </select> -->
+<div class="form">
+  <%= form_tag("/index", method: "get") do %>
+    <%= select_tag :project, options_for_select(@projects), class: 'dropdown' %>
+    <%= select_tag :palette, options_for_select(@palettes), class: 'dropdown' %>
+    <%= submit_tag("Search", class: 'button') %>
+  <% end %>
+</div>
+<!--
     <h3> Generate By Project Type </h3>
     <select name="mydropdownindustry">
       <option value="Academia">Academia</option>
@@ -76,4 +84,4 @@
           <option value="Complementary">Complementary</option>
           <option value="Random!">Random!</option>
         </select>
-
+ -->

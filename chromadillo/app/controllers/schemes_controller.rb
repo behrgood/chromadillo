@@ -14,7 +14,7 @@ class SchemesController < ApplicationController
 
   # GET /schemes/new
   def new
-    @scheme = Scheme.new
+    @scheme = Scheme.new { redirect_to schemes_path }
   end
 
   # GET /schemes/1/edit
