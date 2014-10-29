@@ -8,12 +8,35 @@ class Scheme < ActiveRecord::Base
   def generate
     populate_fonts(project_type)
     populate_colors(palette_type)
-
   end
+
+  # def generate_base_hue(project_type)
+  #   case project_type
+  #   when "Journalism" || "Historical"
+  #     return @base_hue = [ red, brown, orange].sample
+  #   when "Academia" || "Legal"
+  #     return @base_hue =  [ blue, orange, yellow , brown ].sample
+  #   when "Arts + Culture" || "Marketing" || "Promotional"
+  #     return @base_hue = [ yellow, green, pink, purple, blue ].sample
+  #   when "Government" || "Education" || "Finance"
+  #     return @base_hue = [ brown, blue, yellow].sample
+  #   when "Technology" || "Transportation"
+  #     return @base_hue = [blue, purple, orange].sample
+  #   when "Science" || "Architechture"
+  #     return @base_hue =  [ blue, green, brown, red].sample
+  #   end
+  # end
 
   def populate_colors(palette_type)
+    case palette_type
+    when "Monochromatic"
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_monochromatic_scheme((0..360).to_a.sample)
+    when "Complimentary"
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_complimentary_scheme((0..360).to_a.sample)
+    when "Analogous"
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_analogous_scheme((0..360).to_a.sample)
+    end
   end
-
 
   def populate_fonts(project_type)
     self.font1, self.font2 = generate_font_combo(project_type)
@@ -23,15 +46,31 @@ class Scheme < ActiveRecord::Base
     case project_type
     when "Journalism" || "Historical"
       return [humanist_serif, humanist_sans ] # index 0 will be header, 1 will be body
+    when "Historical"
+      return [humanist_serif, humanist_sans ]
     when "Academia" || "Legal"
       return [transitional_serif, transitional_sans ]
-    when "Arts + Culture" || "Marketing" || "Promotional"
+    when "Legal"
+      return [transitional_serif, transitional_sans ]
+    when "Arts + Culture"
       return [ modern_serif, humanist_sans ]
-    when "Government" || "Education" || "Finance"
+    when "Marketing"
+      return [ modern_serif, humanist_sans ]
+    when "Promotional"
+      return [ modern_serif, humanist_sans ]
+    when "Government"
       return [humanist_sans, humanist_serif ]
-    when "Technology" || "Transportation"
+    when "Education"
+      return [humanist_sans, humanist_serif ]
+    when "Finance"
+      return [humanist_sans, humanist_serif ]
+    when "Technology"
       return [transitional_sans, transitional_serif]
-    when "Science" || "Architechture"
+    when "Transportation"
+      return [transitional_sans, transitional_serif]
+    when "Science"
+      return [geometric_sans, transitional_serif]
+    when "Architecture"
       return [geometric_sans, transitional_serif]
     end
   end
@@ -92,37 +131,37 @@ class Scheme < ActiveRecord::Base
     c = "%06x" % (rand * 0xffffff)
     " ##{c}"
   end
-  def generate_base_hue_red
+  def red
     (1..10).to_a.sample
   end
 
-  def generate_base_hue_orange
+  def orange
     (20..30).to_a.sample
   end
 
-  def generate_base_hue_yellow
+  def yellow
     (46..60).to_a.sample
   end
 
-  def generate_base_hue_green
+  def green
     (80..140).to_a.sample
   end
 
-  def generate_base_hue_blue
+  def blue
     (175..250).to_a.sample
   end
 
-  def generate_base_hue_purple
+  def purple
     (262..277).to_a.sample
   end
 
-  def generate_base_hue_pink
+  def pink
     (290..335).to_a.sample
   end
 
-  # def generate_base_hue_brown
-  #    (1..10).to_a.sample
-  # end
+  def brown
+    ["16, 68, 22", "19, 29, 28"].sample
+  end
 
   # def generate_base_hue_black
   #    (1..10).to_a.sample
@@ -153,7 +192,6 @@ class Scheme < ActiveRecord::Base
       ["Legal", "Legal" ],
       ["Marketing", "Marketing" ],
       ["Promotional", "Promotional" ],
-      ["Science", "Science" ],
       ["Science", "Science" ],
       ["Technology", "Technology"],
       ["Transportation", "Transportation"]
