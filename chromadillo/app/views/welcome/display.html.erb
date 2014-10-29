@@ -1,8 +1,8 @@
 
 <div class="form">
   <%= form_tag("/display", method: "get") do %>
-    <%= select_tag :project, options_for_select(@projects), class: 'dropdown' %>
-    <%= select_tag :palette, options_for_select(@palettes), class: 'dropdown' %>
+    <%= select_tag :project, options_for_select(@projects), class: 'dropdown' %> <br> <br>
+    <%= select_tag :palette, options_for_select(@palettes), class: 'dropdown' %> <br> <br>
     <%= submit_tag("Generate Scheme", class: 'button') %>
   <% end %>
 </div>
