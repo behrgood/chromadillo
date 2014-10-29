@@ -14,7 +14,7 @@ class SchemesController < ApplicationController
 
   # GET /schemes/new
   def new
-    @scheme = Scheme.new { redirect_to schemes_path }
+    @scheme = Scheme.new
   end
 
   # GET /schemes/1/edit
@@ -61,7 +61,9 @@ class SchemesController < ApplicationController
     end
   end
 
+
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_scheme
     @scheme = Scheme.find(params[:id])
@@ -69,6 +71,6 @@ class SchemesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def scheme_params
-    params.require(:scheme).permit(:font1, :font2, :color1, :color2, :color3, :color4, :color5)
+    params.require(:scheme).permit(:project_type, :palette_type)
   end
 end
