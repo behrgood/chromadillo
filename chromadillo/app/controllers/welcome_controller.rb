@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
       ["Academia", "Academia" ],
       ["Architecture", "Architecture" ],
       ["Arts + Culture", "Arts + Culture" ],
-      ["Educational", "Educational" ],
+      ["Education", "Education" ],
       ["Government", "Government" ],
       ["History", "History" ],
       ["Legal", "Legal" ],
@@ -45,7 +45,7 @@ class WelcomeController < ApplicationController
   def generate_font_combo(project_type)
     case project_type
     when "Journalism" || "Historical"
-      return [humanist_serif, humanist_sans ]
+      return [humanist_serif, humanist_sans ] # index 0 will be header, 1 will be body
     when "Academia" || "Legal"
       return [transitional_serif, transitional_sans ]
     when "Arts + Culture" || "Marketing" || "Promotional"
