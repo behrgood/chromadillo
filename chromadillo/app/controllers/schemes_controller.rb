@@ -71,6 +71,6 @@ class SchemesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def scheme_params
-    params.require(:scheme).permit(:project_type, :palette_type)
+    params.require(:scheme).permit(:project_type, :palette_type, :base_color)
   end
 end

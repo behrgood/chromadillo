@@ -1,40 +1,25 @@
 class Scheme < ActiveRecord::Base
-  attr_accessor :project_type, :palette_type
+  attr_accessor :project_type, :palette_type, :base_color
   before_create :generate
 
-  validates_presence_of :project_type, :palette_type
+  validates_presence_of :project_type, :palette_type, :base_color
 
 
   def generate
+    generate_base_hue(base_color)
     populate_fonts(project_type)
     populate_colors(palette_type)
   end
 
-  # def generate_base_hue(project_type)
-  #   case project_type
-  #   when "Journalism" || "Historical"
-  #     return @base_hue = [ red, brown, orange].sample
-  #   when "Academia" || "Legal"
-  #     return @base_hue =  [ blue, orange, yellow , brown ].sample
-  #   when "Arts + Culture" || "Marketing" || "Promotional"
-  #     return @base_hue = [ yellow, green, pink, purple, blue ].sample
-  #   when "Government" || "Education" || "Finance"
-  #     return @base_hue = [ brown, blue, yellow].sample
-  #   when "Technology" || "Transportation"
-  #     return @base_hue = [blue, purple, orange].sample
-  #   when "Science" || "Architechture"
-  #     return @base_hue =  [ blue, green, brown, red].sample
-  #   end
-  # end
 
   def populate_colors(palette_type)
     case palette_type
     when "Monochromatic"
-      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_monochromatic_scheme((0..360).to_a.sample)
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_monochromatic_scheme(generate_base_hue(base_color))
     when "Complimentary"
-      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_complimentary_scheme((0..360).to_a.sample)
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_complimentary_scheme(generate_base_hue(base_color))
     when "Analogous"
-      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_analogous_scheme((0..360).to_a.sample)
+      self.color1, self.color2, self.color3, self.color4, self.color5 = generate_analogous_scheme(generate_base_hue(base_color))
     end
   end
 
@@ -74,6 +59,7 @@ class Scheme < ActiveRecord::Base
       return [geometric_sans, transitional_serif]
     end
   end
+
 
   def generate_monochromatic_scheme(base_hue)
     [ "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
@@ -127,50 +113,28 @@ class Scheme < ActiveRecord::Base
   end
 
 
-  def random_color
-    c = "%06x" % (rand * 0xffffff)
-    " ##{c}"
-  end
-  def red
-    (1..10).to_a.sample
-  end
-
-  def orange
-    (20..30).to_a.sample
-  end
-
-  def yellow
-    (46..60).to_a.sample
-  end
-
-  def green
-    (80..140).to_a.sample
-  end
-
-  def blue
-    (175..250).to_a.sample
-  end
-
-  def purple
-    (262..277).to_a.sample
-  end
-
-  def pink
-    (290..335).to_a.sample
-  end
-
-  def brown
-    ["16, 68, 22", "19, 29, 28"].sample
-  end
-
-  # def generate_base_hue_black
-  #    (1..10).to_a.sample
+  # def random_color
+  #   c = "%06x" % (rand * 0xffffff)
+  #   " ##{c}"
   # end
-
-  # def generate_base_hue_white
-  #    (1..10).to_a.sample
-  # end
-
+  def generate_base_hue(base_color)
+    case base_color
+    when "Red"
+      return (1..10).to_a.sample
+    when "Orange"
+      return (20..30).to_a.sample
+    when "Yellow"
+      return (46..60).to_a.sample
+    when "green"
+      return (80..140).to_a.sample
+    when "Blue"
+      return (175..250).to_a.sample
+    when "Purple"
+      return (262..277).to_a.sample
+    when "Pink"
+      return (290..335).to_a.sample
+    end
+  end
 
   def self.palettes
     [
@@ -198,5 +162,18 @@ class Scheme < ActiveRecord::Base
     ]
   end
 
+  def self.colors
+    [
+      ["Red", "Red" ],
+      ["Orange", "Orange" ],
+      ["Yellow", "Yellow" ],
+      ["Green", "Green" ],
+      ["Orange", "Orange" ],
+      ["Yellow", "Yellow" ],
+      ["Blue", "Blue" ],
+      ["Purple", "Purple" ],
+      ["Pink", "Pink" ]
+    ]
+  end
 
 end
