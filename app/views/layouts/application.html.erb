@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <% fonts = "Fjalla+One|Open+Sans|Raleway|Roboto|Cabin|Droid+Sans|Gill+Sans|Open+Sans|Verdana|Palatino|Crimson+Text|Garamond|Cardo|Merriweather|Ubuntu|Oswald|Alegreya+Sans|Raleway|Exo|Helvetica|PT+Sans|Source+Sans+Pro|Trebuchet+MS|Arvo|Bitter|Coustard|Patua+One|Rockwell|Lora|Droid+Serif|Poly|Playfair+Display|Bodoni|Didot|Old+Standard+TT|Oranienbaum".split("|") %>
+
+  <% fonts.each do |font| %>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=<%= font %>" >
+  <% end %>
+
 <!--
   <link rel='stylesheet' type='text/css' href="//fonts.googleapis.com/css?family=Fjalla+One|Open+Sans|Raleway|Roboto|Cabin|Droid+Sans|Gill+Sans|Open+Sans|Verdana|Palatino|Crimson+Text|Garamond|Cardo|Merriweather|Ubuntu|Oswald|Alegreya+Sans|Raleway|Exo|Helvetica|PT+Sans|Source+Sans+Pro|Trebuchet+MS|Arvo|Bitter|Coustard|Patua+One|Rockwell|Lora|Droid+Serif|Poly|Playfair+Display|Bodoni|Didot|Old+Standard+TT|Oranienbaum" > -->
 
+<!--
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Fjalla+One|Open+Sans|Raleway|Roboto|Cabin|Droid+Sans" >
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gill+Sans|Open+Sans|Verdana|Palatino|Crimson+Text|Garamond|Cardo|Merriweather" >
@@ -11,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu|Oswald|Alegreya+Sans|Raleway|Exo|Helvetica|PT+Sans|Source+Sans+Pro" >
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Trebuchet+MS|Arvo|Bitter|Coustard|Patua+One|Rockwell|Lora|Droid+Serif|Poly|Playfair+Display|Bodoni|Didot|Old+Standard+TT|Oranienbaum" >
+-->
 
   <!-- <link rel="stylesheet" href= "assets/css/stylesheet.css"> -->
 
