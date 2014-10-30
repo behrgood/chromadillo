@@ -76,24 +76,24 @@ class Scheme < ActiveRecord::Base
   end
 
   def generate_monochromatic_scheme(base_hue)
-    [ "#{base_hue}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}", "#{base_hue}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}","#{base_hue}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}","#{base_hue}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}","#{base_hue}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}"]
+    [ "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
   end
 
   def generate_complimentary_scheme(base_hue)
     if base_hue + 180 <= 360
-      ["#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}"]
+      ["#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue + [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
     else
-      [ "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}"]
+      [ "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{base_hue - [0,180].sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
     end
   end
 
   def generate_analogous_scheme(base_hue)
     if base_hue + 40 <= 360 && base_hue - 40 >= 0
-      [ "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}"]
+      [ "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue + (-40..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
     elsif base_hue - 40 < 0
-      [ "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" ]
+      [ "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(0..40).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" ]
     elsif base_hue + 40 > 360
-      [ "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}, #{(0..100).to_a.sample}" ]
+      [ "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" , "#{(320..360).to_a.sample}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%" ]
     end
   end
 
