@@ -42,6 +42,15 @@
       </section>
       </div>
  -->
+ <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<%= yield %>
+
 <script>
   // WebFont.load({
   //   google: {
@@ -49,12 +58,16 @@
   //   }
   // });
 
- //   $('div').on('mouseover', function() {
- //   $(this).toggleClass('show-description');
- // });
+   $('div').on('mouseover', function() {
+   $(this).toggleClass('show-description');
+ });
+
+  $('div').on('mouseout', function() {
+  $(this).toggleClass('show-description');
+ });
+
 </script>
 
-<%= yield %>
 
 </body>
 </html>

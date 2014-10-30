@@ -3,7 +3,7 @@ class Scheme < ActiveRecord::Base
   before_create :generate
 
   validates_presence_of :project_type, :palette_type, :base_color
-
+  has_many :users
 
   def generate
     generate_base_hue(base_color)
