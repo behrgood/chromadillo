@@ -149,7 +149,7 @@ class Scheme < ActiveRecord::Base
       return (20..30).to_a.sample
     when "Yellow"
       return (46..60).to_a.sample
-    when "green"
+    when "Green"
       return (80..140).to_a.sample
     when "Blue"
       return (175..250).to_a.sample
