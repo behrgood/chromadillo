@@ -160,6 +160,11 @@ class Scheme < ActiveRecord::Base
     end
   end
 
+  def random_color
+    "%06x" % (rand * 0xffffff)
+  end
+
+
   def self.palettes
     [
       ["Monochromatic", "Monochromatic" ],
