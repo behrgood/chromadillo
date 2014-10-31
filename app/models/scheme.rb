@@ -113,11 +113,11 @@ class Scheme < ActiveRecord::Base
   end
 
   def egyptian_serif
-    ["Arvo", "Bitter", "Coustard", "Patua One", "Rockwell"]
+    ["Arvo", "Bitter", "Coustard", "Patua One", "Rockwell", "Josefin Slab", "Crete Round"]
   end
 
   def geometric_sans
-    ["Century Gothic", "Exo", "Futura", "Raleway", "Roboto"]
+    ["Century Gothic", "Exo", "Futura", "Raleway", "Roboto", "Roboto Condensed"]
   end
 
   def humanist_sans
@@ -125,19 +125,19 @@ class Scheme < ActiveRecord::Base
   end
 
   def humanist_serif
-    ["Palatino", "Crimson Text", "EB Garamond", "Cardo", "Merriweather"]
+    ["Palatino", "Crimson Text", "EB Garamond", "Cardo", "Merriweather", "Noto Serif"]
   end
 
   def modern_serif
-    ["Playfair Display", "Monotype Bodoni", "Didot", "Old Standard TT", "Oranienbaum"]
+    ["Playfair Display", "Monotype Bodoni", "Didot", "Old Standard TT", "Oranienbaum", "Gravitas One", "Vollkorn", "Volkov"]
   end
 
   def transitional_serif
-    ["Baskerville", "Droid Serif", "Lora", "Poly", "Times New Roman"]
+    ["Baskerville", "Droid Serif", "Lora", "Poly", "Times New Roman", "Roboto Slab", "Noticia Text", ]
   end
 
   def transitional_sans
-    ["Helvetica", "PT Sans", "Source Sans Pro" , "Trebuchet"]
+    ["Helvetica", "PT Sans", "Source Sans Pro" , "Trebuchet", "Istok Web", "Nobile"]
   end
 
 
@@ -177,6 +177,7 @@ class Scheme < ActiveRecord::Base
       ["Education", "Education" ],
       ["Government", "Government" ],
       ["History", "History" ],
+      ["Journalism", "Journalism" ],
       ["Legal", "Legal" ],
       ["Marketing", "Marketing" ],
       ["Promotional", "Promotional" ],
