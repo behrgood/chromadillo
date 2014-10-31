@@ -1,4 +1,10 @@
 <!-- <p id="notice"><%= notice %></p> -->
+  <% content_for(:head) do %>
+    <% @scheme.needed_google_fonts.each do |font| %>
+      <% font_url = "//fonts.googleapis.com/css?family=#{URI::escape(font)}" %>
+      <%= stylesheet_link_tag font_url %>
+    <% end %>
+  <% end %>
 
       <div class = "container">
         <h1 style= "font-family:  <%= @header_typeface = @scheme.font1 %>"><%= @header_typeface %></h1>

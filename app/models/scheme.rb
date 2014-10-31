@@ -87,6 +87,7 @@ class Scheme < ActiveRecord::Base
     [font1, font2]
   end
 
+  # the scheme's fonts that are google fonts
   def needed_google_fonts
     fonts & google_fonts
   end
