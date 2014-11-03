@@ -60,6 +60,24 @@ class Scheme < ActiveRecord::Base
     end
   end
 
+  def generate_base_hue(base_color)
+    case base_color
+    when "Red"
+      return (1..10).to_a.sample
+    when "Orange"
+      return (20..30).to_a.sample
+    when "Yellow"
+      return (46..60).to_a.sample
+    when "Green"
+      return (80..140).to_a.sample
+    when "Blue"
+      return (175..250).to_a.sample
+    when "Purple"
+      return (262..277).to_a.sample
+    when "Pink"
+      return (290..335).to_a.sample
+    end
+  end
 
   def generate_monochromatic_scheme(base_hue)
     [ "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
@@ -141,24 +159,6 @@ class Scheme < ActiveRecord::Base
   end
 
 
-  def generate_base_hue(base_color)
-    case base_color
-    when "Red"
-      return (1..10).to_a.sample
-    when "Orange"
-      return (20..30).to_a.sample
-    when "Yellow"
-      return (46..60).to_a.sample
-    when "Green"
-      return (80..140).to_a.sample
-    when "Blue"
-      return (175..250).to_a.sample
-    when "Purple"
-      return (262..277).to_a.sample
-    when "Pink"
-      return (290..335).to_a.sample
-    end
-  end
 
   def random_color
     "%06x" % (rand * 0xffffff)
