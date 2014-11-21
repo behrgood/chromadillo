@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function animate_hsl() {
+    $(".marge").hover(function() {
+    $(this).find('.show-hsl').toggleClass("small");
+  });
+}
+
+$(function(){
+
+  animate_hsl();
+
+});
