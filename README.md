@@ -21,8 +21,13 @@
 
  A user should be presented with one style guide arrangement upon clicking "generate". If the user is unsatisfied with the current generated scheme, the user should immediately have the choice to generate a new arrangement with new or identical parameters. This process should repeat until the user is pleased with the results.
 
+<<<<<<< HEAD
+
+
+=======
 ##Wireframe
 http://i100.photobucket.com/albums/m39/mongrelitus/ScreenShot2014-10-31at31908AM_zps808c5801.png
 
 ##ERD
 http://i100.photobucket.com/albums/m39/mongrelitus/ScreenShot2014-10-31at31051AM_zpsa8bd714f.png
+>>>>>>> 16a22262544fc0b5618bb525592acbcd9520443a

@@ -29,37 +29,55 @@ class Scheme < ActiveRecord::Base
 
   def generate_font_combo(project_type)
     case project_type
-    when "Journalism" || "Historical"
-      return [humanist_serif, humanist_sans ] # index 0 will be header, 1 will be body
-    when "Historical"
-      return [humanist_serif, humanist_sans ]
-    when "Academia" || "Legal"
-      return [transitional_serif, transitional_sans ]
+    when "Journalism"
+      return [random_font(humanist_serif), random_font(humanist_sans) ] # index 0 will be header, 1 will be body
+    when "History"
+      return [random_font(humanist_serif), random_font(humanist_sans) ]
+    when "Academia"
+      return [random_font(transitional_serif), random_font(transitional_sans) ]
     when "Legal"
-      return [transitional_serif, transitional_sans ]
+      return [random_font(transitional_serif), random_font(transitional_sans) ]
     when "Arts + Culture"
-      return [ modern_serif, humanist_sans ]
+      return [ random_font(modern_serif), random_font(humanist_sans) ]
     when "Marketing"
-      return [ modern_serif, humanist_sans ]
+      return [ random_font(modern_serif), random_font(humanist_sans) ]
     when "Promotional"
-      return [ modern_serif, humanist_sans ]
+      return [ random_font(modern_serif), random_font(humanist_sans) ]
     when "Government"
-      return [humanist_sans, humanist_serif ]
+      return [random_font(humanist_sans), random_font(humanist_serif) ]
     when "Education"
-      return [humanist_sans, humanist_serif ]
+      return [random_font(humanist_sans), random_font(humanist_serif) ]
     when "Finance"
-      return [humanist_sans, humanist_serif ]
+      return [random_font(humanist_sans), random_font(humanist_serif) ]
     when "Technology"
-      return [transitional_sans, transitional_serif]
+      return [random_font(transitional_sans), random_font(transitional_serif)]
     when "Transportation"
-      return [transitional_sans, transitional_serif]
+      return [random_font(transitional_sans), random_font(transitional_serif)]
     when "Science"
-      return [geometric_sans, transitional_serif]
+      return [random_font(geometric_sans), random_font(transitional_serif)]
     when "Architecture"
-      return [geometric_sans, transitional_serif]
+      return [random_font(geometric_sans), random_font(transitional_serif)]
     end
   end
 
+  def generate_base_hue(base_color)
+    case base_color
+    when "Red"
+      return (1..10).to_a.sample
+    when "Orange"
+      return (20..30).to_a.sample
+    when "Yellow"
+      return (46..60).to_a.sample
+    when "Green"
+      return (80..140).to_a.sample
+    when "Blue"
+      return (175..250).to_a.sample
+    when "Purple"
+      return (262..277).to_a.sample
+    when "Pink"
+      return (290..335).to_a.sample
+    end
+  end
 
   def generate_monochromatic_scheme(base_hue)
     [ "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%", "#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%","#{base_hue}, #{(0..100).to_a.sample}%, #{(0..100).to_a.sample}%"]
@@ -83,58 +101,69 @@ class Scheme < ActiveRecord::Base
     end
   end
 
+  def fonts
+    [font1, font2]
+  end
+
+  # the scheme's fonts that are google fonts
+  def needed_google_fonts
+    fonts & google_fonts
+  end
+
+  def google_fonts
+    (font_wish_list - troublesome_fonts - reserved_fonts).sort
+  end
+
+  def font_wish_list
+    egyptian_serif + geometric_sans + humanist_sans + humanist_serif + modern_serif + transitional_serif + transitional_sans
+  end
+
+  def reserved_fonts
+    "Gill+Sans|Helvetica|Didot|Garamond|Palatino|Rockwell|Trebuchet".split("|")
+  end
+
+  def troublesome_fonts
+    "Rockwell|Verdana|Trebuchet+MS|Bodoni".split("|")
+  end
+
+  def random_font(fonts)
+    fonts.sample
+  end
 
   def egyptian_serif
-    ["Arvo", "Bitter", "Coustard", "Patua One", "Rockwell"].sample
+    ["Arvo", "Bitter", "Coustard", "Patua One", "Rockwell", "Josefin Slab", "Crete Round"]
   end
 
   def geometric_sans
-    ["Century Gothic", "Exo", "Futura", "Raleway", "Roboto"].sample
+    ["Century Gothic", "Exo", "Futura", "Raleway", "Roboto", "Roboto Condensed"]
   end
 
   def humanist_sans
-    ["Cabin", "Droid Sans", "Gill Sans", "Open Sans", "Verdana", "Fjalla One", "Ubuntu", "Oswald", "Alegreya Sans"].sample
+    ["Cabin", "Droid Sans", "Lato", "Open Sans", "Verdana", "Fjalla One", "Ubuntu", "Oswald", "Alegreya Sans"]
   end
 
   def humanist_serif
-    ["Palatino", "Crimson Text", "Garamond", "Cardo", "Merriweather"].sample
+    ["Palatino", "Crimson Text", "EB Garamond", "Cardo", "Merriweather", "Noto Serif"]
   end
 
   def modern_serif
-    ["Playfair Display", "Bodoni", "Didot", "Old Standard TT", "Oranienbaum"].sample
+    ["Playfair Display", "Monotype Bodoni", "Didot", "Old Standard TT", "Oranienbaum", "Gravitas One", "Vollkorn", "Volkov"]
   end
 
   def transitional_serif
-    ["Baskerville", "Droid Serif", "Lora", "Poly", "Times New Roman"].sample
+    ["Baskerville", "Droid Serif", "Lora", "Poly", "Times New Roman", "Roboto Slab", "Noticia Text", ]
   end
 
   def transitional_sans
-    ["Helvetica", "PT Sans", "Source Sans Pro" , "Trebuchet MS"].sample
+    ["Helvetica", "PT Sans", "Source Sans Pro" , "Trebuchet", "Istok Web", "Nobile"]
   end
 
 
-  # def random_color
-  #   c = "%06x" % (rand * 0xffffff)
-  #   " ##{c}"
-  # end
-  def generate_base_hue(base_color)
-    case base_color
-    when "Red"
-      return (1..10).to_a.sample
-    when "Orange"
-      return (20..30).to_a.sample
-    when "Yellow"
-      return (46..60).to_a.sample
-    when "green"
-      return (80..140).to_a.sample
-    when "Blue"
-      return (175..250).to_a.sample
-    when "Purple"
-      return (262..277).to_a.sample
-    when "Pink"
-      return (290..335).to_a.sample
-    end
+
+  def random_color
+    "%06x" % (rand * 0xffffff)
   end
+
 
   def self.palettes
     [
@@ -153,6 +182,7 @@ class Scheme < ActiveRecord::Base
       ["Education", "Education" ],
       ["Government", "Government" ],
       ["History", "History" ],
+      ["Journalism", "Journalism" ],
       ["Legal", "Legal" ],
       ["Marketing", "Marketing" ],
       ["Promotional", "Promotional" ],

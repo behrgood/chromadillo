@@ -12,11 +12,11 @@
       </div>
     <% end %>
 <h3> Select Base Color </h3>
-    <%= f.select :base_color, options_for_select(Scheme.colors), class: 'dropdown' %> <br>
+   <%= f.select :base_color, options_for_select(Scheme.colors), {}, class: 'dropdown test' %> <br>
 <h3> Select Project Type </h3>
-    <%= f.select :project_type, options_for_select(Scheme.projects), class: 'dropdown' %> <br>
+    <%= f.select :project_type, options_for_select(Scheme.projects), {}, class: 'dropdown test' %> <br>
 <h3> Select Palette Type </h3>
-    <%= f.select :palette_type, options_for_select(Scheme.palettes), class: 'dropdown' %> <br> <br> <br>
+    <%= f.select :palette_type, options_for_select(Scheme.palettes), {}, class: 'dropdown test' %> <br> <br> <br>
     <%= f.submit("Generate Scheme", class: 'button') %>
   <% end %>
 </div>
