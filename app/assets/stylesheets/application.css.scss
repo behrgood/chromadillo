@@ -17,7 +17,6 @@
 body {
     /*    background-image: url("vw.jpg");
     background-size: cover;*/
-
     background-color: black;
 }
 header img {
@@ -95,7 +94,7 @@ section {
     position: fixed;
     margin-left: 430px;
     float: right;
-    /*  background-color: rgba(0,0,0,.9)*/
+/*    background-color: rgba(0,0,0,.9)*/
 }
 /*#c1:hover small{
     border-radius: 30px;
@@ -138,6 +137,7 @@ section {
     padding: 5px;
     background-color: black;
     border: 2px solid white;
+    border-radius: 5px;
     margin-left: 38px;
     transition: .5s;
     -webkit-transition: .5s;
@@ -146,7 +146,7 @@ section {
 .button:hover {
     color: black;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .foot {
     padding-left: 55px;
