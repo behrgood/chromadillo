@@ -17,12 +17,20 @@
 
 function animate_hsl() {
     $(".marge").hover(function() {
-    $(this).find('.show-hsl').toggleClass("small");
-  });
+        $(this).find('.show-hsl').toggleClass("small");
+    });
 }
 
-$(function(){
+
+
+$(function() {
+  var customSelects = document.querySelectorAll(".custom-dropdown__select");
+  for(var i=0; i<customSelects.length; i++){
+    if (customSelects[i].hasAttribute("disabled")){
+      customSelects[i].parentNode.className += " custom-dropdown--disabled";
+    }
+  };
 
   animate_hsl();
 
-});
+})();
