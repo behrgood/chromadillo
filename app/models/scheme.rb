@@ -198,8 +198,6 @@ class Scheme < ActiveRecord::Base
       ["Orange", "Orange" ],
       ["Yellow", "Yellow" ],
       ["Green", "Green" ],
-      ["Orange", "Orange" ],
-      ["Yellow", "Yellow" ],
       ["Blue", "Blue" ],
       ["Purple", "Purple" ],
       ["Pink", "Pink" ]

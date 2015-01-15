@@ -25,6 +25,7 @@ header img {
     text-align: left;
     width: 190px;
     z-index: 1000;
+    transform: rotate(-7deg);
 }
 h1 {
     font-size: 50px;
@@ -36,7 +37,7 @@ h3 {
     letter-spacing: 1px;
     font-size: 14px;
     font-family: 'HelveticaNeue-Light';
-    color: rgb(130, 130, 130);
+    color: rgb(235,235,235);
 }
 p {
     font-size: 16px;
@@ -45,6 +46,7 @@ p {
     color: rgb(200, 200, 200);
     margin-top: -35px;
 }
+
 section {
     text-align: right;
 }
@@ -194,6 +196,11 @@ section {
 .marge {
     margin-right: 10px;
 }
+a {
+    text-decoration: none;
+    color: hsl(206, 40%, 48%);
+}
+
 
 /******************************
 BUTTON IS ALL UP IN HURR
