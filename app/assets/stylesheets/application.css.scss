@@ -306,10 +306,12 @@ MEDIA QUERY
         left: 0;
         cursor: hand;
     }
+
     .cont01 {
         float: left;
         width: 300px;
     }
+
     .show-hsl {
         opacity: 1;
         margin-top: .8em;
@@ -321,8 +323,8 @@ MEDIA QUERY
 @media screen and ( min-width: 768px) and ( max-width: 1280px) {
     header img {
         padding-top: 20px;
-        margin-left: 100px;
-        width: 200px;
+      /*  margin-left: 100px;*/
+        width: 800px;
         z-index: 1000;
     }
     h1 {
@@ -338,11 +340,16 @@ MEDIA QUERY
     }
     .container {
         clear: both;
-        width: 300px;
+        width: 80%;
         position: relative;
         padding-top: 2em;
         margin: 0 auto;
         float: none;
+            h1 {
+        font-size: 10em;
+        margin-top: 20px;
+        line-height: 100px;
+    }
     }
     .cont01 {
         clear: both;
@@ -351,12 +358,16 @@ MEDIA QUERY
         background: rgba(0, 0, 0, 0);
         color: white;
         width: 85%;
+        height: 2em;
+        font-size: 4em;
     }
     .button {
         width: 85%;
+        height: 4em;
         font-style: bold;
-        font-size: 2em;
+        font-size: 4em;
         margin: 0 auto;
+        border-radius: 0;
     }
     p {
         font-size: 20px;
@@ -371,16 +382,13 @@ MEDIA QUERY
     }
     h3 {
         letter-spacing: 1px;
-        font-size: 14px;
+        font-size: 4em;
         font-family: 'Helvetica';
-        color: rgb(235, 235, 235);
-    }
-    small {
-        font-size: 16px;
+        color: rgb(120, 120, 120);
     }
     #c1 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -389,8 +397,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c2 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -399,8 +407,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c3 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -409,8 +417,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c4 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -419,8 +427,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c5 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -430,14 +438,15 @@ MEDIA QUERY
     }
     .cont01 {
         float: left;
-        width: 300px;
+        width: 80%;
     }
     .show-hsl {
         opacity: 1;
-        margin-top: .8em;
         margin-left: 1em;
-        vertical-align: center;
-        font-size: 1.7em;
+        font-size: 4em;
+        padding-top: 0;
+        z-index: 10px;
+        overflow: visible;
     }
 }
 @media screen and ( min-width: 320px) and ( max-width: 640px) {
@@ -460,7 +469,7 @@ MEDIA QUERY
     }
     .container {
         clear: both;
-        width: 300px;
+        width: 80%;
         position: relative;
         padding-top: 2em;
         margin: 0 auto;
@@ -479,6 +488,7 @@ MEDIA QUERY
         font-style: bold;
         font-size: 2em;
         margin: 0 auto;
+        border-radius: 0;
     }
     p {
         font-size: 20px;
@@ -497,12 +507,12 @@ MEDIA QUERY
         font-family: 'Helvetica';
         color: rgb(235, 235, 235);
     }
-    small {
-        font-size: 16px;
-    }
+ /*   small {
+        font-size: 20px;
+    }*/
     #c1 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -511,8 +521,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c2 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -521,8 +531,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c3 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -531,8 +541,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c4 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -541,8 +551,8 @@ MEDIA QUERY
         cursor: hand;
     }
     #c5 {
-        height: 4.5em;
-        width: 4.5em;
+        height: 8em;
+        width: 8em;
         border-radius: 0px;
         border: solid white 2px;
         float: left;
@@ -555,10 +565,11 @@ MEDIA QUERY
         width: 300px;
     }
     .show-hsl {
-        opacity: 1;
-        margin-top: .8em;
-        margin-left: 1em;
-        vertical-align: center;
-        font-size: 1.7em;
+    opacity: 1;
+    margin-left: 1em;
+    font-size: 4em;
+    padding-top: 0;
+    z-index: 10px;
+    overflow: visible;
     }
 }
