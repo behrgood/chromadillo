@@ -192,10 +192,10 @@ a {
     text-decoration: none;
     color: hsl(206, 40%, 48%);
 }
-
 /***************************************
 MEDIA QUERY
 *************************************/
+
 @media (max-width: 700px) {
     header img {
         padding-top: 20px;
@@ -318,57 +318,247 @@ MEDIA QUERY
         font-size: 1.7em;
     }
 }
-/******************************
-BUTTON IS ALL UP IN HURR
-*******************************/
-/*
-.button {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  outline: 0;
-  -webkit-appearance: none;
+@media screen and ( min-width: 768px) and ( max-width: 1280px) {
+    header img {
+        padding-top: 20px;
+        margin-left: 100px;
+        width: 200px;
+        z-index: 1000;
+    }
+    h1 {
+        font-size: 55px;
+        margin-top: 20px;
+        line-height: 40px;
+    }
+    .form {
+        position: relative;
+        width: 100%;
+        margin-top: 2em;
+        margin-left: 0;
+    }
+    .container {
+        clear: both;
+        width: 300px;
+        position: relative;
+        padding-top: 2em;
+        margin: 0 auto;
+        float: none;
+    }
+    .cont01 {
+        clear: both;
+    }
+    .dropdown {
+        background: rgba(0, 0, 0, 0);
+        color: white;
+        width: 85%;
+    }
+    .button {
+        width: 85%;
+        font-style: bold;
+        font-size: 2em;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: -45;
+    }
+    h1 {
+        font-size: 4em;
+        font-family: 'Helvetica';
+        color: white;
+        line-height: 1.5;
+    }
+    h3 {
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        color: rgb(235, 235, 235);
+    }
+    small {
+        font-size: 16px;
+    }
+    #c1 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c2 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c3 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c4 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c5 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    .cont01 {
+        float: left;
+        width: 300px;
+    }
+    .show-hsl {
+        opacity: 1;
+        margin-top: .8em;
+        margin-left: 1em;
+        vertical-align: center;
+        font-size: 1.7em;
+    }
 }
-
-/* Custom */
-/*.button {
-  display: inline-block;
-  position: relative;
-  width: 150px;
-  padding: 20px 10px;
-  top: 0;
-  font-size: 15px;
-  font-family: Helvetica;
-  border-radius: 4px;
-  border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
-  background: rgba( 22, 230, 137, 1 );
-  color: #fff;
-  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
-
-  -webkit-transform: translateZ(0);
-     -moz-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-          transform: translateZ(0);
-
-  -webkit-transition: all 0.2s ease;
-     -moz-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-          transition: all 0.2s ease;
+@media screen and ( min-width: 320px) and ( max-width: 640px) {
+    header img {
+        padding-top: 20px;
+        margin-left: 100px;
+        width: 200px;
+        z-index: 1000;
+    }
+    h1 {
+        font-size: 55px;
+        margin-top: 20px;
+        line-height: 40px;
+    }
+    .form {
+        position: relative;
+        width: 100%;
+        margin-top: 2em;
+        margin-left: 0;
+    }
+    .container {
+        clear: both;
+        width: 300px;
+        position: relative;
+        padding-top: 2em;
+        margin: 0 auto;
+        float: none;
+    }
+    .cont01 {
+        clear: both;
+    }
+    .dropdown {
+        background: rgba(0, 0, 0, 0);
+        color: white;
+        width: 85%;
+    }
+    .button {
+        width: 85%;
+        font-style: bold;
+        font-size: 2em;
+        margin: 0 auto;
+    }
+    p {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: -45;
+    }
+    h1 {
+        font-size: 4em;
+        font-family: 'Helvetica';
+        color: white;
+        line-height: 1.5;
+    }
+    h3 {
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-family: 'Helvetica';
+        color: rgb(235, 235, 235);
+    }
+    small {
+        font-size: 16px;
+    }
+    #c1 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c2 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c3 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c4 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    #c5 {
+        height: 4.5em;
+        width: 4.5em;
+        border-radius: 0px;
+        border: solid white 2px;
+        float: left;
+        clear: both;
+        left: 0;
+        cursor: hand;
+    }
+    .cont01 {
+        float: left;
+        width: 300px;
+    }
+    .show-hsl {
+        opacity: 1;
+        margin-top: .8em;
+        margin-left: 1em;
+        vertical-align: center;
+        font-size: 1.7em;
+    }
 }
-
-.button:hover {
-  top: -3px;
-  box-shadow: 0px 10px 10px rgba( 15, 165, 60, .4 );
-
-  -webkit-transform: rotateX(20deg);
-     -moz-transform: rotateX(20deg);
-      -ms-transform: rotateX(20deg);
-          transform: rotateX(20deg);
-}
-
-.button:active {
-  top: 0px;
-  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
-  background: rgba( 20, 224, 133, 1 );
-} */
