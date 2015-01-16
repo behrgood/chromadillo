@@ -21,10 +21,8 @@ function animate_hsl() {
     });
 }
 
-
-
 $(function() {
 
-  animate_hsl();
+    animate_hsl();
 
-})();
+});
